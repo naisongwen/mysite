@@ -1,0 +1,82 @@
+{% extends 'polls/base.html' %}
+{% block content %}
+
+<h3 class="page-header">产品列表</h3>
+<div class="row placeholders">
+    {% for product in product_list %}
+    <div class="col-xs-2 col-sm-2 placeholder">
+      <a href="{% url 'polls:product_detail' product.id %}"><img src="/media/{{product.mainPhoto}}" width="150" height="150" style="border:1px;" alt="Generic placeholder thumbnail"></a>
+      <span class="text-muted">{{product.title}}</span>
+    </div>
+    {% endfor %}
+</div>
+
+<h3 class="page-header">客户列表</h3>
+<div class="row placeholders">
+    {% for customer in customer_list %}
+    <div class="col-xs-4 col-sm-4 placeholder">
+      <img src="/media/{{customer.customer_logo}}" width="250" height="250" style="border:1px;"alt="Generic placeholder thumbnail">
+      <span class="text-muted">{{customer.customer_name}}</span>
+    </div>
+    {% endfor %}
+</div>
+<h3 class="sub-header">客户评价</h3>
+<div class="table-responsive">
+ <table class="table table-striped" style=”table-layout: fixed;”>
+  <thead>
+   <tr>
+    <th>#</th>
+    <th>客户</th>
+    <th>评价</th>
+  </thead>
+  <tbody>
+    {% for appraise in appraise_list %}
+    <tr>
+     <td>{{appraise.id}}</td>
+     <td style="width:150px;height:100px;"><img src="/media/{{appraise.customer_logo}}" width="150" height="150" class="img-responsive" alt="Generic placeholder thumbnail"></td>
+     <td  style=”white-space: nowrap;text-overflow: ellipsis;overflow: hidden;”>{{appraise.customer_appraise}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+  </table>
+</div>
+<div class="row ">
+   <div class="col-xs-7 col-sm-7">
+       <div class="news">
+	    <div class="news_title">
+		<span>新闻中心</span>
+		<p>NEWS</p>
+		<b></b>
+	     </div>
+	     <div class="clear"></div>
+	     <ul >
+        {% for article in article_list %}
+		<li>
+            <a href="{% url 'polls:article_detail' article.id %}"><span><b>&gt;</b>{{article.title}}</span>
+                <p>{{article.pub_date}}</p>
+            </a>
+        </li>
+        {% endfor %}
+	    </ul>
+       </div>
+      </div>
+   <div class="col-xs-5 col-sm-5">
+      <div class="faq">
+         <div class="faq_title">
+	       <span>常见问题解答</span>
+           <p>Questions</p>
+         </div>
+         <div class="clear">
+          <ul>
+            {% for faq in faq_list %}
+            <li>
+	           <span><a href="">{{faq.question}}</a></span>
+	           <p><a href="">答: {{faq.answer}}</a></p>
+	       </li>
+	       {% endfor %}
+         </ul>
+       </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

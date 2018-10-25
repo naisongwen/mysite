@@ -1,0 +1,206 @@
+body {
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    background-color: #fff;
+}
+
+#navbar ul li a:hover, .active{
+    color: #f34209;
+}
+.top_row {
+    margin-right: -15px;
+    margin-left: -15px;
+    margin-top: 50px;
+}
+
+.news {
+    width: 495px;
+    float: left;
+    overflow: hidden;
+}
+
+.news ul li{ height:31px; line-height:31px;  float:left; width:480px; border-bottom:1px dotted #000;}
+.news ul li p{ float:right; margin-right:28px;}
+ul li span {
+    float: left;
+}
+
+.news_title span {
+    float: left;
+    display: block;
+    border-bottom: 3px solid #2f2d38;
+    height: 27px;
+    font: bold 14px/26px "宋体";
+}
+
+.news_title p {
+    float: left;
+    display: block;
+    height: 27px;
+    border-bottom: 3px solid #e92016;
+    font: 100 14px/22px Arial, Helvetica, sans-serif;
+    text-align: center;
+    line-height: 24px;
+}
+
+.news ul li p {
+    float: right;
+    margin-right: 28px;
+}
+
+.news_title b {
+    float: right;
+    line-height: 27px;
+    font-weight: 100;
+}
+
+
+.clear {
+ clear :both;
+}
+
+
+.faq {
+    overflow: hidden;
+}
+
+.faq_title span {
+    float: left;
+    display: block;
+    border-bottom: 3px solid #2f2d38;
+    height: 27px;
+    font: bold 14px/26px "宋体";
+}
+
+
+.faq_title p {
+    float: left;
+    display: block;
+    height: 27px;
+    border-bottom: 3px solid #e92016;
+    font: 100 14px/22px Arial, Helvetica, sans-serif;
+    text-align: center;
+    line-height: 24px;
+}
+
+
+.faq ul li {
+    overflow: hidden;
+    height: 100px;
+    border-bottom: 1px dotted #000;
+    padding-top: 8px;
+}
+
+
+.faq ul li span {
+    background: url(/static/polls/images/wen_115.jpg) no-repeat center left;
+    font-weight: bold;
+    padding-left: 24px;
+    height: 20px;
+    display: block;
+    line-height: 20px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+
+.faq ul li p {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    clear: both;
+}
+
+.main_manu_title {
+    height: 33px;
+    #background: url(/static/polls/images/secondary_banner.jpg) no-repeat;
+    background-color: #d43636;
+    line-height: 33px;
+}
+
+.secondary_manu.title {
+    font-size: 14px;
+    padding-left: 40px;
+}
+
+
+
+#liuy {
+    height: 175px;
+    padding-left:70px;
+    background: url(../images/ipc_16_123.jpg) no-repeat center center;
+}
+
+
+.liuy_bar .liuynr .liuy_title {
+    height: 63px;
+    overflow: hidden;
+}
+
+#liuy .liuy_bar .liuynr {
+    width: 275px;
+    float: right;
+    padding-top: 33px;
+}
+
+
+#foot {
+    background: #31373b;
+    border-top: 2px solid #FF0036;
+    overflow: hidden;
+}
+
+#foot .foot_bar {
+    width: 980px;
+    margin: auto;
+}
+
+#foot .foot_bar .banq {
+    height: 96px;
+    overflow: hidden;
+}
+
+#foot .foot_bar .banq .banq_logo {
+    height: 96px;
+    width: 475px;
+    #float: left;
+    text-align: left;
+    min-height: 177px;
+}
+
+#foot .foot_bar .link_lj .link_ljs {
+    #float: right;
+    width: 835px;
+    /* width: 895px; */
+    overflow: hidden;
+}
+
+#foot .foot_bar .link_lj .link_ljs a {
+    color: #d5d5d5;
+    #margin-left: 12px;
+    margin-right: 12px;
+    float: left;
+    margin-top: 15px;
+}
+
+#foot .foot_bar .banq .banq_xx {
+    #float: right;
+    display: inline;
+    width: 100%;
+    height: 96px;
+    color: #e1e1e1;
+    line-height: 22px;
+    overflow: hidden;
+}
+
+#foot .foot_bar .banq .banq_xx a {
+    color: #e1e1e1;
+}
+
+
+.table .table-striped > tr >td {
+height: 80px;
+max-height: 80px;
+}

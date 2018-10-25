@@ -1,0 +1,62 @@
+{% extends 'polls/base.html' %}
+{% block content %}
+
+<div class="table-responsive">
+ <table class="table table-striped">
+  <thead>
+   <tr>
+    <th>#</th>
+    <th>标题</th>
+    <th>主图</th>
+    <th>内容</th>
+   </tr>
+  </thead>
+  <tbody>
+    {% for product in products %}
+    <tr>
+     <td>{{product.id}}</td>
+     <td style="width:15%;">{{product.title}}</td>
+     <td style="width:25%;"><a href="{% url 'polls:product_detail' product.id %}"><img src="/media/{{product.mainPhoto}}" width="150" height="150" class="img-responsive" alt="{{product.title }}"/></a></td>
+     <td style="height:"150px;">{{product.content}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+  </table>
+</div>
+
+<!---
+{% for product in products %}
+  <div class="row placeholders">
+    <div class="col-xs-4 col-sm-2 placeholder">
+      <img src="product.mainPhoto" width="150" height="150" class="img-responsive" alt="{{product.title }}">
+      <h4>Label</h4>
+      <span class="text-muted">Something else</span>
+    </div>
+  </div>
+{% endfor %}
+---->
+<div class="container">
+<nav aria-label="Page navigation">
+<ul class="pagination">
+    <span class="step-links">
+        {% if products.has_previous %}
+            <a href="?page=1">&laquo; first</a>
+            <a href="?page={{ products.previous_page_number }}">previous</a>
+        {% endif %}
+
+	{% if products %}
+	    <span class="current">
+     		Page {{ products.number }} of {{ products.paginator.num_pages }}.
+	    </span>
+        {% endif %}
+
+        {% if products.has_next %}
+            <a href="?page={{ products.next_page_number }}">next</a>
+            <a href="?page={{ products.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    </span>
+</ul>
+</nav>
+</div>
+
+{% endblock %}

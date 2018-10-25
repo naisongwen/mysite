@@ -1,0 +1,99 @@
+{% extends 'bootstrap3/bootstrap3.html' %}
+
+{% block bootstrap3_title %}{% block title %}{% endblock %}{% endblock %}
+{% load url from future %}
+
+{% load bootstrap3 %}
+
+{% block bootstrap3_content %}
+    <div class="container">
+        <h1>{% block title %}(no title){% endblock %}</h1>
+
+        <p>
+            <a href="{% url 'home' %}">home</a>
+            <a href="{% url 'form_default' %}">form</a>
+            <a href="{% url 'form_horizontal' %}">form_horizontal</a>
+            <a href="{% url 'form_inline' %}">form_inline</a>
+            <a href="{% url 'form_with_files' %}">form_with_files</a>
+            <a href="{% url 'pagination' %}">pagination</a>
+        </p>
+
+        {% bootstrap_messages %}
+
+        {% block content %}(no content){% endblock %}
+    </div>
+
+{% endblock %}
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+
+{% if latest_question_list %}
+    <ul>
+    {% for question in latest_question_list %}
+        <li><a href="/polls/{{ question.id }}/">{{ question.question_text }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
+
+{% load bootstrap3 %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="x-ua-compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+  <title>Learning Log</title>
+
+  {% bootstrap_css %}
+  {% bootstrap_javascript %}
+</head>
+<body>
+
+<!-- Static navbar -->
+<nav class="navbar navbar-default navbar-static-top">
+  <div class="container">
+
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" 
+              data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+      </button>
+      <a class="navbar-brand" href="">Learning Log</a>
+    </div>
+
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="">Topics</a></li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        {% if user.is_authenticated %}
+          <li><a>Hello, {{ user.username }}.</a></li>
+          <li><a href="">log out</a></li>
+        {% else %}
+          <li><a href="">register</a></li>
+          <li><a href="">log in</a></li>
+        {% endif %}
+      </ul>
+    </div><!--/.nav-collapse -->
+
+  </div>
+</nav>
+<div class="container">
+
+  <div class="page-header">
+    {% block header %}{% endblock %}
+  </div>
+  <div>
+    {% block content %}{% endblock %}
+  </div>
+
+</div> <!-- /container -->
+</body>	
+</body>
+</html>
+

@@ -1,0 +1,197 @@
+{% extends 'polls/bootstrap.html' %}
+
+{% load bootstrap3 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+{% block bootstrap3_content %}
+
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}?v=0.0.11">
+
+
+   <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Project name</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Help</a></li>
+          </ul>
+          <form class="navbar-form navbar-right">
+            <input type="text" class="form-control" placeholder="Search...">
+          </form>
+        </div>
+      </div>
+    </nav>
+
+   <div class="container">
+      <div class="row">
+       <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+            <li><a href="#">Reports</a></li>
+            <li><a href="#">Analytics</a></li>
+            <li><a href="#">Export</a></li>
+          </ul>
+          <ul class="nav nav-sidebar">
+            <li><a href="">Nav item</a></li>
+            <li><a href="">Nav item again</a></li>
+            <li><a href="">One more nav</a></li>
+            <li><a href="">Another nav item</a></li>
+            <li><a href="">More navigation</a></li>
+          </ul>
+          <ul class="nav nav-sidebar">
+            <li><a href="">Nav item again</a></li>
+            <li><a href="">One more nav</a></li>
+            <li><a href="">Another nav item</a></li>
+          </ul>
+        </div>
+	 <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h1 class="page-header">Dashboard</h1>
+
+          <div class="row placeholders">
+            <div class="col-xs-4 col-sm-2 placeholder">
+              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="150" height="150" class="img-responsive" alt="Generic placeholder thumbnail">
+              <h4>Label</h4>
+              <span class="text-muted">Something else</span>
+            </div>
+            <div class="col-xs-4 col-sm-2 placeholder">
+              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="150" height="150" class="img-responsive" alt="Generic placeholder thumbnail">
+              <h4>Label</h4>
+              <span class="text-muted">Something else</span>
+            </div>
+            <div class="col-xs-4 col-sm-2 placeholder">
+              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="150" height="150" class="img-responsive" alt="Generic placeholder thumbnail">
+              <h4>Label</h4>
+              <span class="text-muted">Something else</span>
+            </div>
+            <div class="col-xs-4 col-sm-2 placeholder">
+              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="150" height="150" class="img-responsive" alt="Generic placeholder thumbnail">
+              <h4>Label</h4>
+              <span class="text-muted">Something else</span>
+            </div>
+            <div class="col-xs-4 col-sm-2 placeholder">
+              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="150" height="150" class="img-responsive" alt="Generic placeholder thumbnail">
+              <h4>Label</h4>
+              <span class="text-muted">Something else</span>
+            </div>
+          </div>
+
+          <h2 class="sub-header">Section title</h2>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Header</th>
+                  <th>Header</th>
+                  <th>Header</th>
+                  <th>Header</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1,001</td>
+                  <td>Lorem</td>
+                  <td>ipsum</td>
+                  <td>dolor</td>
+                  <td>sit</td>
+                </tr>
+                <tr>
+                  <td>1,002</td>
+                  <td>amet</td>
+                  <td>consectetur</td>
+                  <td>adipiscing</td>
+                  <td>elit</td>
+                </tr>
+               </tbody>
+            </table>
+         </div>
+         <div class="row placeholders">
+            <div class="col-xs-8 col-sm-8 placeholder">
+              <dl>
+       	          <dt><a href="info_tianyuanjituan.html"><img src="upload/1532515559.png" width="187" height="153" title=""></a></dt>
+                  <dd>
+		  <h4><a href="info_tianyuanjituan.html">恒丰轮胎</a></h4>
+                    <span><a href="info_tianyuanjituan.html">"我们在购买辉煌电泳设备的最初报价阶段，我们一直比较担心外省企业，担心他们的售后做不好。但没想到，设备使用2年多来，基本没出现异常情况。几个月前，因为一个泵头磨损影响了生产，辉煌得知后，当天安排售后技术员赶到产线，并把问题解决了。后来才得知他们不仅在浙江有分公司，而且在全国各地还有多个办事处。</a></span>
+                    <p><a href="info_tianyuanjituan.html">了解详细</a></p>
+                 </dd>
+              </dl>
+            </div>
+	   <div class="col-xs-4 col-sm-4 placeholder">
+              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="150" height="150" class="img-responsive" alt="Generic placeholder thumbnail">
+              <h4>Label</h4>
+              <span class="text-muted">Something else</span>
+           </div>
+	</div>
+
+	<div class="row ">
+           <div class="col-xs-7 col-sm-7">
+	       <div class="news">
+		    <div class="news_title">
+			<span>新闻中心</span>
+			<p>NEWS</p>
+			<b><a href="news.html">&gt;&gt; 更多</a></b>
+		     </div>
+		     <div class="clear"></div>
+		     <ul >
+			<li><a href="info_qiantanyinjidianyongcaobeiyongcaojinxingjueyuanhefangfushidechuli.html"><span><b>&gt;</b> 浅谈阴极电泳槽、备用槽进行绝缘</span><p>2018-03-07</p></a></li>
+			<li><a href="info_dianyongtuzhuangfeiqichulifangfatedianduibi.html"><span><b>&gt;</b> 电泳涂装废气处理方法特点对比</span><p>2018-01-26</p></a></li>
+			<li><a href="info_heisedianyongtuzhuanghefaheichuliyoushinaxiequbie.html"><span><b>&gt;</b> 黑色电泳涂装和发黑处理有是哪些</span><p>2018-01-20</p></a></li>
+			<li><a href="info_guanyudianyongshengchanxianruhetigaoxiaolv.html"><span><b>&gt;</b> 关于电泳生产线如何提高效率</span><p>2017-11-25</p></a></li>
+			<li><a href="info_dianyongxiangexiangpeitaoshebeijizuoyong.html"><span><b>&gt;</b> 电泳线各项配套设备及作用</span><p>2017-11-23</p></a></li>
+			<li><a href="info_dianyongshebeidegaijinhegongyideweihu.html"><span><b>&gt;</b> 电泳设备的改进和工艺的维护</span><p>2017-11-18</p></a></li>
+			<li><a href="info_guanyudianyongtuzhuangguileiwentihuanbaobuzuochuliaohuiying.html"><span><b>&gt;</b> 关于电泳涂装归类问题，环保部做</span><p>2017-11-14</p></a></li>
+			<li><a href="info_dianyongtuzhuangfeishuichangjiandechulifangshi.html"><span><b>&gt;</b> 电泳生产线产生的废水该如何有效</span><p>2017-10-28</p></a></li>
+			<li><a href="info_guanyutuzhuangxingyejienengjianpaiwenti.html"><span><b>&gt;</b> 关于涂装行业节能减排问题</span><p>2017-09-23</p></a></li>
+			<li><a href="info_dianyongshengchanxianwenti.html"><span><b>&gt;</b> 电泳生产线问题</span><p>2017-09-02</p></a></li>
+			<li><a href="info_xinjiandianyongxiankaicaoxuzhuyishixiang.html"><span><b>&gt;</b> 新建电泳线开槽需注意事项</span><p>2017-08-11</p></a></li>
+			<li><a href="info_20170708106484.html"><span><b>&gt;</b> </span><p>2017-07-08</p></a></li>
+			<li><a href="info_guanyudianyongcaodiandaolvdeqingkuang.html"><span><b>&gt;</b> 关于电泳槽电导率的情况</span><p>2017-07-08</p></a></li>
+			<li><a href="info_guanyudianyongqituoqidejizhongfangfa.html"><span><b>&gt;</b> 关于电泳漆脱漆的几种方法</span><p>2017-02-16</p></a></li>
+			<li><a href="info_lvxingcaidianyongtuzhuangfadeyoudian.html"><span><b>&gt;</b> 铝型材电泳涂装法的优点</span><p>2016-07-29</p></a></li>
+			<li><a href="info_dianyongshebeianquancaozuoguicheng.html"><span><b>&gt;</b> 电泳设备安全操作规程</span><p>2016-06-13</p></a></li>
+		     </ul>
+		</div>
+	  </div>
+ 	  <div class="col-xs-5 col-sm-5">
+	     <div class="faq">
+		<div class="faq_title">
+        	<span>常见问题解答</span>
+                <p>Questions</p>
+      	     </div>
+	     <div class="clear"></div>
+             <ul>
+		<li>
+        	  <span><a href="info_20171123101243.html">电泳生产中如何维护槽液稳定</a></span>
+            	  <p><a href="info_20171123101243.html">答:  电泳槽中的固体份在日常的电沉积作业中不断地被消耗掉，因此必须给予...</a></p>
+		</li>
+		<li>
+        	  <span><a href="info_dianyongshebeiruheweihubaoyang.html">电泳设备如何维护保养</a></span>
+            	  <p><a href="info_dianyongshebeiruheweihubaoyang.html">答:  电泳生产线上各设备系统维护及日常保养（电泳主循环系统，电泳超滤系...</a></p>
+		</li>
+		<li>
+        	  <span><a href="info_guanyuqianchulituozhigongyidechuli.html">关于前处理脱脂工艺的处理</a></span>
+		  <p><a href="info_guanyuqianchulituozhigongyidechuli.html">答:  脱脂（除油）是涂装生产中的第一道关键工序，脱脂不良将直接影响到磷...</a></p>
+		</li>
+		<li>
+		    <span><a href="info_dianyonggongjianqimianbuyuncucaodeyuanyinjijiejuefangfa.html">电泳工件漆面不匀、粗糙的原因及解决方法</a></span>
+		    <p><a href="info_dianyonggongjianqimianbuyuncucaodeyuanyinjijiejuefangfa.html">答:  烘干后的电泳漆涂膜表面光泽、光滑度等不匀，有阴阳面。这种电泳漆膜...</a></p>
+		</li>
+     	     </ul>
+	  </div>
+       </div>
+    </div>
+
+{% endblock %}
