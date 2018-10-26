@@ -136,7 +136,7 @@ def consult(request):
         if form.is_valid():
             #process the data in form.cleaned_data as required
             form.save()
-            return HttpResponseRedirect('/polls/completeConsult.html')
+            return HttpResponseRedirect('/polls/complete_consult')
     else:
         form = ConsultForm()
     context=createBaseContext()
