@@ -95,8 +95,10 @@ class CustomerAppraise (models.Model):
         verbose_name = "客户评价"
         verbose_name_plural = "客户评价"
 
-class RollingImage (models.Model):
-    roll_image = models.ImageField(verbose_name='首页滚屏图像',upload_to='images')
+class RotateImage (models.Model):
+    rotate_image = models.ImageField(verbose_name='首页滚屏图片',upload_to='images',null=True)
+    rotate_title = models.CharField(verbose_name='图片标题', max_length=300,null=True)
+    rotate_link = models.CharField(verbose_name='跳转地址', max_length=300,null=True)
     class Meta:
         verbose_name = "首页滚屏图像"
         verbose_name_plural = "首页滚屏图像"

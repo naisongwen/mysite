@@ -9,11 +9,15 @@
 	</ol>   
 	<!-- 轮播（Carousel）项目 -->
 	<div class="carousel-inner">
-        {% for rotate in rotate_list %}
 		<div class="item active">
-			<img src="/media/{{rotate.rotate_image}}" width="1250" height="450" style="height:450px;" alt="{{rotate.title}}">
+			<img src="/media/products/shenjia_cQaFM50.jpg" width="850" height="450" alt="First slide">
 		</div>
-        {% endfor %}
+		<div class="item">
+			<img src="/media/products/shenjia_cQaFM50.jpg" width="850" height="450" alt="Second slide">
+		</div>
+		<div class="item">
+			<img src="/media/products/shenjia_cQaFM50.jpg" width="850" height="450" alt="Third slide">
+		</div>
 	</div>
 	<!-- 轮播（Carousel）导航 -->
 	<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
@@ -25,7 +29,7 @@
 		<span class="sr-only">Next</span>
 	</a>
 </div> 
-<h3 class="page-header">热门产品</h3>
+<h3 class="page-header">产品列表</h3>
 <div class="row placeholders">
     {% for product in product_list %}
     <div class="col-xs-2 col-sm-2 placeholder">
@@ -35,7 +39,7 @@
     {% endfor %}
 </div>
 
-<h3 class="page-header">合作企业</h3>
+<h3 class="page-header">客户列表</h3>
 <div class="row placeholders">
     {% for customer in customer_list %}
     <div class="col-xs-4 col-sm-4 placeholder">

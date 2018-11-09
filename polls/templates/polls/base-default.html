@@ -2,7 +2,7 @@
 {% load bootstrap3 %}
 {% block bootstrap3_content %}
 {% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}?v=0.0.53">
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}?v=0.0.52">
 
 <!--top nav manu--->
 <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -35,14 +35,29 @@
 
 <!--left nav manu--->
 <div class="container">
-  <div class="top_row">
-       <div class="col-sm-12">
+    <div class="top_row">
+       <div class="col-sm-3">
+          {% for manu in main_manu_list %}
+          <div>
+            <div class="main_manu_title">
+             {{ manu.main_manu.title}}
+            </div>
+            <ul class="nav nav-sidebar secondary_manu_title">
+             {% for submanu in manu.manu_secondary %}
+             <li class="active">
+                <a href="{% url 'polls:subcategory' submanu.id %}">{{submanu.title}} <span class="sr-only">(current)</span></a>
+             </li>
+             {% endfor %}
+            </ul>
+         </div>
+        {% endfor %}
+       </div>
+       <div class="col-sm-9">
           {% autoescape off %}{% bootstrap_messages %}
           {% block content %}{% endblock %}
           {% endautoescape %}
        </div>	
     </div>
-  </div>
 </div>
 <div class="row placeholders">
   <div id="liuy">

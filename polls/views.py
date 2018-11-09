@@ -2,7 +2,7 @@
 
 from django.http import HttpResponse,HttpResponseRedirect
 from django.template import loader
-from .models import MainManu,SecondaryManu,Article,Product,CustomerAppraise,FAQ
+from .models import MainManu,SecondaryManu,Article,Product,CustomerAppraise,FAQ,RotateImage
 from django.shortcuts import get_object_or_404,render
 from django.urls import reverse
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
@@ -33,6 +33,8 @@ def index(request):
     context['product_list']=product_list
     faq_list=FAQ.objects.all().order_by('-id')[:3]
     context['faq_list']=faq_list
+    rotate_list=RotateImage.objects.all().order_by('-id')[:5]
+    context['rotate_list']=rotate_list
     return HttpResponse(template.render(context, request))
 
 #use category to represent MainManu
