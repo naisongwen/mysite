@@ -10,7 +10,7 @@
 	<!-- 轮播（Carousel）项目 -->
 	<div class="carousel-inner">
         {% for rotate in rotate_list %}
-		<div class="item active">
+		<div class="item {% if forloop.counter == 1 %} active {% endif %}">
 			<img src="/media/{{rotate.rotate_image}}" width="1250" height="450" style="height:450px;" alt="{{rotate.title}}">
 		</div>
         {% endfor %}
@@ -25,12 +25,12 @@
 		<span class="sr-only">Next</span>
 	</a>
 </div> 
-<h3 class="page-header">热门产品</h3>
+<h3 class="page-header">产品分类</h3>
 <div class="row placeholders">
-    {% for product in product_list %}
-    <div class="col-xs-2 col-sm-2 placeholder">
-      <a href="{% url 'polls:product_detail' product.id %}"><img src="/media/{{product.mainPhoto}}" width="150" height="150" style="border:1px;" alt="Generic placeholder thumbnail"></a>
-      <span class="text-muted">{{product.title}}</span>
+    {% for category in product_category %}
+    <div class="col-xs-3 col-sm-3 placeholder">
+      <a href="{% url 'polls:subcategory' category.id %}"><img src="/media/{{category.cover_image}}" width="250" height="250" style="border:1px;" alt="Generic placeholder thumbnail"></a>
+      <span class="text-muted">{{category.title}}</span>
     </div>
     {% endfor %}
 </div>
@@ -44,26 +44,7 @@
     </div>
     {% endfor %}
 </div>
-<h3 class="sub-header">客户评价</h3>
-<div class="table-responsive">
- <table class="table table-striped" style=”table-layout: fixed;”>
-  <thead>
-   <tr>
-    <th>#</th>
-    <th>客户</th>
-    <th>评价</th>
-  </thead>
-  <tbody>
-    {% for appraise in appraise_list %}
-    <tr>
-     <td>{{appraise.id}}</td>
-     <td style="width:150px;height:100px;"><img src="/media/{{appraise.customer_logo}}" width="150" height="150" class="img-responsive" alt="Generic placeholder thumbnail"></td>
-     <td  style=”white-space: nowrap;text-overflow: ellipsis;overflow: hidden;”>{{appraise.customer_appraise}}</td>
-    </tr>
-    {% endfor %}
-  </tbody>
-  </table>
-</div>
+
 <div class="row ">
    <div class="col-xs-7 col-sm-7">
        <div class="news">

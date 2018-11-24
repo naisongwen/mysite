@@ -10,14 +10,17 @@ from .models import ConsultForm
 from django.shortcuts import render
 
 def createBaseContext():
-    main_manu =MainManu.objects.all() #rder_by('-pub_date')[:5]
+    main_manu =MainManu.objects.all()
     main_manu_list=[]
+    product_category=[]
     for manu in main_manu:
         manu_secondary=SecondaryManu.objects.filter(mainmanu=manu.id)
+        if manu.template=='PL':
+            product_category=manu_secondary
         manu_dict={"main_manu":manu,"manu_secondary":manu_secondary}
         main_manu_list.append(manu_dict)
     form = ConsultForm()
-    context={'main_manu': main_manu,'main_manu_list':main_manu_list,'form':form}
+    context={'main_manu': main_manu,'main_manu_list':main_manu_list,'product_category':product_category,'form':form}
     return context
 
 def index(request):
@@ -25,15 +28,15 @@ def index(request):
     appraise_list=CustomerAppraise.objects.all().order_by('-id')[:6]
     customer_list=appraise_list
     context=createBaseContext()
-    article_list=Article.objects.all().order_by('-id')[:10]
-    product_list=Product.objects.all().order_by('-id')[:12]
+    article_list=Article.objects.all().order_by('id')[:10]
+    product_list=Product.objects.all().order_by('id')[:12]
     context['customer_list']=customer_list
     context['appraise_list']=appraise_list
     context['article_list']=article_list
     context['product_list']=product_list
     faq_list=FAQ.objects.all().order_by('-id')[:3]
     context['faq_list']=faq_list
-    rotate_list=RotateImage.objects.all().order_by('-id')[:5]
+    rotate_list=RotateImage.objects.all().order_by('id')[:5]
     context['rotate_list']=rotate_list
     return HttpResponse(template.render(context, request))
 
@@ -59,14 +62,14 @@ def category(request, category_id):
     elif category.template=='AL':
         template='polls/article_list.html'
         article_list=Article.objects.filter(mainmanu=category.id)
-        paginator = Paginator(article_list,2) # Show 25 contacts per page
+        paginator = Paginator(article_list,20) # Show 20 contacts per page
         articles= paginator.get_page(page)
         context['articles']=articles
         return render(request, template,context)
     elif category.template=='PL':
         template='polls/product_list.html'
         product_list=Product.objects.filter(mainmanu=category.id)
-        paginator = Paginator(product_list,2) # Show 25 contacts per page
+        paginator = Paginator(product_list,20) # Show 20 contacts per page
         products= paginator.get_page(page)
         context['products']=products
         return render(request, template,context)

@@ -27,6 +27,7 @@ class SecondaryManu(models.Model):
     #To define a many-to-one relationship, use django.db.models.ForeignKey
     mainmanu=models.ForeignKey(MainManu,on_delete=models.CASCADE,verbose_name='请设置一级分类')
     title=models.CharField(max_length=100,verbose_name='二级分类菜单标题')
+    cover_image = models.ImageField(upload_to='products',verbose_name='封面图',null=True)
 
     def __str__(self):
         return self.title
@@ -99,6 +100,10 @@ class RotateImage (models.Model):
     rotate_image = models.ImageField(verbose_name='首页滚屏图片',upload_to='images',null=True)
     rotate_title = models.CharField(verbose_name='图片标题', max_length=300,null=True)
     rotate_link = models.CharField(verbose_name='跳转地址', max_length=300,null=True)
+
+    def __str__(self):
+        return self.rotate_link
+
     class Meta:
         verbose_name = "首页滚屏图像"
         verbose_name_plural = "首页滚屏图像"
