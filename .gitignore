@@ -1,3 +1,5 @@
 __pycache__
 _site
+media
+mysite/whoosh_index
 polls/migrations

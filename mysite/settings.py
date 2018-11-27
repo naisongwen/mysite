@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'DjangoUeditor',
     'bootstrap3',
+    'haystack',
 ]
 
 MIDDLEWARE = [
@@ -130,3 +131,12 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 BOOTSTRAP3 = {
     "include_jquery": True,
 }
+
+
+HAYSTACK_CONNECTIONS = {
+    'default': {
+        'ENGINE': 'haystack.backends.whoosh_backend.WhooshEngine',
+        'PATH': os.path.join(os.path.dirname(__file__), 'whoosh_index'),
+    },
+}
+

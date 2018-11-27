@@ -98,14 +98,14 @@ def subcategory(request, sub_category_id):
     elif category.template=='AL':
         template='polls/article_list.html'
         article_list=Article.objects.filter(secondarymanu=sub_category.id)
-        paginator = Paginator(article_list,2) # Show 25 contacts per page
+        paginator = Paginator(article_list,20) # Show 20 contacts per page
         articles= paginator.get_page(page)
         context['articles']=articles
         return render(request, template,context)
     elif category.template=='PL':
         template='polls/product_list.html'
         product_list=Product.objects.filter(secondarymanu=sub_category.id)
-        paginator = Paginator(product_list,2) # Show 25 contacts per page
+        paginator = Paginator(product_list,20) # Show 20 contacts per page
         products= paginator.get_page(page)
         context['products']=products
         return render(request,template,context)

@@ -7,6 +7,7 @@ urlpatterns = [
     path('polls/', include('polls.urls')),
     path('admin/', admin.site.urls),
     path('ueditor/',include(DjiangoUditorUrls)),
+    path('search/', include('haystack.urls')),
 ]
 
 if settings.DEBUG:
