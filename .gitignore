@@ -1,5 +1,6 @@
 __pycache__
 _site
+db.sqlite3
 media
 mysite/whoosh_index
 polls/migrations

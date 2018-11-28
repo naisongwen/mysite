@@ -3,7 +3,9 @@
 {% block bootstrap3_content %}
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}?v=0.0.53">
-
+<style> 
+    span.highlighted { color: red; } 
+</style>
 <!--top nav manu--->
 <nav class="navbar navbar-inverse navbar-fixed-top">
    <div class="container">
@@ -24,11 +26,9 @@
 	    {% endfor %}
 	    </ul>
 	{% endif %}
-        <!--
-       <form class="navbar-form navbar-right">
-    	    <input type="text" class="form-control" placeholder="Search...">
-       </form>
-        --->
+    <form class="navbar-form navbar-right" role="search" method="get" id="searchform" action="{% url 'haystack_search' %}">
+        <input type="search" class="form-control" name="q" placeholder="搜索" required>
+    </form>
      </div>
   </div>
 </nav>
@@ -69,7 +69,8 @@
   <div class="col-xs-6 col-sm-6 placeholder">
   <div class="liuy_bar">
      <div style="padding-top: 33px;width:301px;">
-        <div class="liuy_nra">        
+        <div class="liuy_nra">   
+            {% if not form  %}     
             <form action="/polls/consult/" method="post">
                 {% csrf_token %}
                 {{ form.non_field_errors }}
@@ -95,6 +96,7 @@
                 </div>
                 <input type="submit" style="float:right;" value="提交">
             </form>
+            {% endif %}
           </div>
         </div>
     </div>

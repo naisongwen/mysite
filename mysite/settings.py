@@ -132,11 +132,14 @@ BOOTSTRAP3 = {
     "include_jquery": True,
 }
 
+HAYSTACK_SEARCH_RESULTS_PER_PAGE = 5
 
 HAYSTACK_CONNECTIONS = {
     'default': {
-        'ENGINE': 'haystack.backends.whoosh_backend.WhooshEngine',
+        #'ENGINE': 'haystack.backends.whoosh_backend.WhooshEngine',
+        'ENGINE': 'polls.whoosh_cn_backend.WhooshEngine',
         'PATH': os.path.join(os.path.dirname(__file__), 'whoosh_index'),
     },
 }
-
+#自动生成索引
+HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
