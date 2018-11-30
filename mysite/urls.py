@@ -4,6 +4,7 @@ from DjangoUeditor import urls as DjiangoUditorUrls
 from django.conf import settings
 
 urlpatterns = [
+    path('', include('polls.urls')),
     path('polls/', include('polls.urls')),
     path('admin/', admin.site.urls),
     path('ueditor/',include(DjiangoUditorUrls)),

@@ -15,7 +15,6 @@ urlpatterns = [
     path('<int:article_id>/article', views.article_detail, name='article_detail'),
     # ex: /polls/5/product/
     path('<int:product_id>/product/', views.product_detail, name='product_detail'),
-
     path('consult/', views.consult, name='consult'),
     path('complete_consult', views.complete_consult, name='complete_consult'),
 ]

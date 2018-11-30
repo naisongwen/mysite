@@ -11,7 +11,7 @@
 	<div class="carousel-inner">
         {% for rotate in rotate_list %}
 		<div class="item {% if forloop.counter == 1 %} active {% endif %}">
-			<img src="/media/{{rotate.rotate_image}}" width="1250" height="450" style="height:450px;" alt="{{rotate.title}}">
+			<a href="{{rotate.rotate_link}}"><img src="/media/{{rotate.rotate_image}}" width="1250" height="450" style="height:450px;" alt="{{rotate.title}}"></a>
 		</div>
         {% endfor %}
 	</div>
