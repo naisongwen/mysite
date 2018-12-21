@@ -4,7 +4,7 @@
   <div class="row placeholders">
     {% for product in products %}
     <div class="col-xs-3 col-sm-3 placeholder">
-      <a href="{% url 'polls:product_detail' product.id %}"><img src="/media/{{product.mainPhoto}}" width="250" height="250" class="img-responsive" alt="{{product.title }}"></a>
+      <a href="{% url 'polls:product_detail' product.id %}"><img src="/media/{{product.mainPhoto}}" width="250" height="250" alt="{{product.title }}"></a>
       <!--<h4>Label</h4>-->
       <span class="text-muted">{{product.title}}</span>
     </div>
