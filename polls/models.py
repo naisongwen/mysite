@@ -108,6 +108,9 @@ class RotateImage (models.Model):
         verbose_name = "首页滚屏图像"
         verbose_name_plural = "首页滚屏图像"
 
+class BackGroudImage(models.Model):
+    bg_image = models.ImageField(verbose_name='背景图片',upload_to='images',null=True)
+
 class FAQ (models.Model):
     question=models.CharField(verbose_name='问题描述', max_length=200)
     answer=models.CharField(verbose_name='问题答案', max_length=400)

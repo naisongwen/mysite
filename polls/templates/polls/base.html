@@ -2,12 +2,12 @@
 {% load bootstrap3 %}
 {% block bootstrap3_content %}
 {% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}?v=0.0.53">
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}?v=0.0.61">
 <style> 
     span.highlighted { color: red; } 
 </style>
 <!--top nav manu--->
-<nav class="navbar navbar-inverse navbar-fixed-top">
+<nav class="navbar navbar-inverse navbar-top">
    <div class="container">
 	<div class="navbar-header">
 	   <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -70,7 +70,7 @@
   <div class="liuy_bar">
      <div style="padding-top: 33px;width:301px;">
         <div class="liuy_nra">   
-            {% if not form  %}     
+            {% if form  %}     
             <form action="/polls/consult/" method="post">
                 {% csrf_token %}
                 {{ form.non_field_errors }}

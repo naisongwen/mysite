@@ -5,8 +5,7 @@
     {% for product in products %}
     <div class="col-xs-3 col-sm-3 placeholder">
       <a href="{% url 'polls:product_detail' product.id %}"><img src="/media/{{product.mainPhoto}}" width="250" height="250" alt="{{product.title }}"></a>
-      <!--<h4>Label</h4>-->
-      <h5 style="text-align: center;">{{product.title}}</h5>
+      <h5 style="text-align: center;line-height:44px;">{{product.title}}</h5>
     </div>
     {% endfor %}
   </div>

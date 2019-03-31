@@ -10,6 +10,9 @@
             <a href="{% url 'polls:product_detail' result.object.id %}">{% highlight result.object.title with query max_length 500 %}</a>
             <br>
             <span>
+                <img weight="100" height="100" src="/media/{{result.object.mainPhoto}}"/>
+            </span>
+            <span>
                 {% highlight result.object.content with query max_length 300 %}
             </span>
         </p>

@@ -12,19 +12,19 @@
 <div class="pagination">
     <span class="step-links">
         {% if articles.has_previous %}
-            <a href="?page=1">&laquo; first</a>
-            <a href="?page={{ articles.previous_page_number }}">previous</a>
+            <a href="?page=1">&laquo; 首页</a>
+            <a href="?page={{ articles.previous_page_number }}">前一页</a>
         {% endif %}
 
     {% if articles %}
         <span class="current">
-            Page {{ articles.number }} of {{ articles.paginator.num_pages }}.
+            第 {{ articles.number }} 页(总 {{ articles.paginator.num_pages }} 页)
         </span>
         {% endif %}
 
         {% if articles.has_next %}
-            <a href="?page={{ articles.next_page_number }}">next</a>
-            <a href="?page={{ articles.paginator.num_pages }}">last &raquo;</a>
+            <a href="?page={{ articles.next_page_number }}">下一页</a>
+            <a href="?page={{ articles.paginator.num_pages }}">尾页 &raquo;</a>
         {% endif %}
     </span>
 </div>

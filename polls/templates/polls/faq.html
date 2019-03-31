@@ -1,0 +1,44 @@
+{% extends 'polls/base.html' %}
+{% block content %}
+
+<div class="table-responsive">
+ <table class="table table-striped" style="table-layout:fixed;">
+  <thead>
+   <tr>
+    <th style="width:5%;height:50px;">#</th>
+    <th style="width:25%;height:50px;">问题</th>
+    <th style="height:50px;text-overflow:ellipsis;overflow:hidden;">答案</th>
+   </tr>
+  </thead>
+  <tbody>
+    {% for q in faq %}
+    <tr>
+        <td>{{q.id}}</td>
+        <td style="height:30px;max-height:50px;">{{q.question}}</td>
+        <td style="height:30px;max-height:50px;">{{q.answer}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+  </table>
+</div>
+
+<div class="pagination">
+    <span class="step-links">
+        {% if faq.has_previous %}
+            <a href="?page=1">&laquo; 首页</a>
+            <a href="?page={{ faq.previous_page_number }}">前一页</a>
+        {% endif %}
+
+	{% if faq %}
+	    <span class="current">
+     		第 {{ faq.number }} 页 (总 {{ faq.paginator.num_pages }} 页)
+	    </span>
+        {% endif %}
+
+        {% if faq.has_next %}
+            <a href="?page={{ faq.next_page_number }}">下一页</a>
+            <a href="?page={{ faq.paginator.num_pages }}">尾页 &raquo;</a>
+        {% endif %}
+    </span>
+</div>
+{% endblock %}

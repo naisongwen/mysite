@@ -6,13 +6,20 @@ body {
     background-color: #fff;
 }
 
+.navbar-inverse {
+    background-image: url（{{STATIC_URL}}{{back_groud_images}});
+}
+
+.navbar{
+    min-height: 100px;
+}
+
 #navbar ul li a:hover, .active{
     color: #f34209;
 }
 .top_row {
     margin-right: -15px;
     margin-left: -15px;
-    margin-top: 52px;
 }
 
 .news {

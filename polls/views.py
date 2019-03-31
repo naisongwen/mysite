@@ -2,7 +2,7 @@
 
 from django.http import HttpResponse,HttpResponseRedirect
 from django.template import loader
-from .models import MainManu,SecondaryManu,Article,Product,CustomerAppraise,FAQ,RotateImage
+from .models import MainManu,SecondaryManu,Article,Product,CustomerAppraise,FAQ,RotateImage,BackGroudImage
 from django.shortcuts import get_object_or_404,render
 from django.urls import reverse
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
@@ -20,7 +20,8 @@ def createBaseContext():
         manu_dict={"main_manu":manu,"manu_secondary":manu_secondary}
         main_manu_list.append(manu_dict)
     form = ConsultForm()
-    context={'main_manu': main_manu,'main_manu_list':main_manu_list,'product_category':product_category,'form':form}
+    back_groud_images=BackGroudImage.objects.all()
+    context={'main_manu': main_manu,'main_manu_list':main_manu_list,'product_category':product_category,'form':form,"back_groud_images":back_groud_images}
     return context
 
 def index(request):
@@ -147,6 +148,18 @@ def consult(request):
     context=createBaseContext()
     context['form']=form
     return render(request, 'polls/index.html',context)
+
+def faq(request):
+    faq=FAQ.objects.all()
+    context=createBaseContext()
+    paginator = Paginator(faq,20)
+    page = request.GET.get('page')
+    if page is None:
+        page=1
+    faq= paginator.get_page(page)
+    context['faq']=faq
+    return render(request, 'polls/faq.html',context)
+
 '''
 def vote(request, question_id):
     question = get_object_or_404(Question, pk=question_id)
