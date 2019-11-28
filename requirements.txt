@@ -26,7 +26,7 @@ requests==2.20.0
 six==1.11.0
 snownlp==0.12.3
 stevedore==1.30.0
-urllib3==1.24
+urllib3==1.24.2
 virtualenv==16.0.0
 virtualenv-clone==0.4.0
 virtualenvwrapper==4.8.2
