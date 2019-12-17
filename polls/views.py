@@ -1,13 +1,13 @@
 # Create your views here.
 
-from django.http import HttpResponse,HttpResponseRedirect
-from django.template import loader
-from .models import MainManu,SecondaryManu,Article,Product,CustomerAppraise,FAQ,RotateImage,BackGroudImage
-from django.shortcuts import get_object_or_404,render
-from django.urls import reverse
-from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
-from .models import ConsultForm
+from django.core.paginator import Paginator
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
+from django.template import loader
+
+from .models import ConsultForm
+from .models import MainManu, SecondaryManu, Article, Product, CustomerAppraise, FAQ, RotateImage, BackGroudImage
+
 
 def createBaseContext():
     main_manu =MainManu.objects.all()
