@@ -3,7 +3,7 @@ chardet==3.0.4
 cssselect==1.0.3
 cycler==0.10.0
 demjson==2.2.4
-Django==2.1.1
+Django==2.2.10
 django-bootstrap3==11.0.0
 django-haystack==2.8.1
 DjangoUeditor==1.8.143
