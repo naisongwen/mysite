@@ -13,7 +13,7 @@ jieba==0.39
 kiwisolver==1.0.1
 lxml==4.2.3
 matplotlib==3.0.0
-numpy==1.15.3
+numpy==1.22.0
 pbr==5.1.0
 Pillow==5.2.0
 pyparsing==2.2.2
